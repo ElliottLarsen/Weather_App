@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cityLable: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    var weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // TextField notifies the current ViewCotroller.
@@ -44,6 +46,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        // Catch the user input and send it to WeatherManager.swift.
+        if let city = searchTextField.text {
+            weatherManager.getWeather(cityName: city)
+        }
         // Clear our the text field.
         searchTextField.text = ""
     }
