@@ -7,13 +7,45 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var cityLable: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // TextField notifies the current ViewCotroller.
+        searchTextField.delegate = self
     }
 
-
+    @IBAction func searchButton(_ sender: UIButton) {
+        // Hide the keyboard once search button is tapped.
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
+    }
+ 
+    // This function is called when the return button on the keyboard is tapped.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard once the return button is tapped.
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
+        return true
+    }
+    
+    // Change the placeholder message if the user tries to enter an empty string.
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if searchTextField.text == "" {
+            textField.placeholder = "Please enter a city."
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // Clear our the text field.
+        searchTextField.text = ""
+    }
 }
 

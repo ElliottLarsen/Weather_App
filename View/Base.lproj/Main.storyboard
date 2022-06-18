@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="34" id="g7I-gi-rtS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-iR-ryE">
                                 <rect key="frame" x="31" y="54" width="45" height="45"/>
@@ -79,6 +79,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseForegroundColor" name="TextColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5g-H3-XBA"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" translatesAutoresizingMaskIntoConstraints="NO" id="BaZ-G5-hJa">
                                 <rect key="frame" x="264" y="281" width="120" height="120"/>
@@ -116,6 +119,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nO0-5Q-kZf" secondAttribute="trailing" constant="30" id="yJT-fg-tyB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLable" destination="TEI-Rd-7wW" id="Svi-1X-rKs"/>
+                        <outlet property="conditionImageView" destination="BaZ-G5-hJa" id="XYI-Up-ohF"/>
+                        <outlet property="searchTextField" destination="ey3-J7-a6T" id="uio-Rw-BIq"/>
+                        <outlet property="temperatureLabel" destination="xVP-de-eE2" id="H6P-xX-5TK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
