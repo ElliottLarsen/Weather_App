@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB081A09285FA09C00A1D307 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB081A08285FA09C00A1D307 /* WeatherData.swift */; };
+		AB081A0B285FA53B00A1D307 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB081A0A285FA53B00A1D307 /* WeatherDataModel.swift */; };
 		AB23D6C5285A545200070C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23D6C4285A545200070C33 /* AppDelegate.swift */; };
 		AB23D6C7285A545200070C33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23D6C6285A545200070C33 /* SceneDelegate.swift */; };
 		AB23D6C9285A545200070C33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23D6C8285A545200070C33 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		AB081A08285FA09C00A1D307 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		AB081A0A285FA53B00A1D307 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		AB23D6C1285A545200070C33 /* Weather_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB23D6C4285A545200070C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB23D6C6285A545200070C33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				AB38FDA6285E54F00079867F /* WeatherManager.swift */,
 				AB081A08285FA09C00A1D307 /* WeatherData.swift */,
+				AB081A0A285FA53B00A1D307 /* WeatherDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				AB23D6C9285A545200070C33 /* ViewController.swift in Sources */,
 				AB081A09285FA09C00A1D307 /* WeatherData.swift in Sources */,
+				AB081A0B285FA53B00A1D307 /* WeatherDataModel.swift in Sources */,
 				AB23D6C5285A545200070C33 /* AppDelegate.swift in Sources */,
 				AB38FDA7285E54F00079867F /* WeatherManager.swift in Sources */,
 				AB23D6C7285A545200070C33 /* SceneDelegate.swift in Sources */,
