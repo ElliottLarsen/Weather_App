@@ -47,6 +47,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseForegroundColor" name="TextColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oom-r9-g8Z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boston" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEI-Rd-7wW">
                                 <rect key="frame" x="31" y="144" width="353" height="43"/>

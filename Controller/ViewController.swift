@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
     @IBOutlet weak var searchTextField: UITextField!
@@ -14,9 +15,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     @IBOutlet weak var temperatureLabel: UILabel!
     
     var weatherManager = WeatherManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Ask permission to get the user location.
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+
         weatherManager.delegate = self
         // TextField notifies the current ViewCotroller.
         searchTextField.delegate = self
@@ -69,5 +76,29 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     func didError(error: Error) {
         print(error)
     }
+    @IBAction func locationButton(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
 }
 
+// CLLocationManagerDelegate.
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            locationManager.stopUpdatingLocation()
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            weatherManager.fetchWeather(latitude: latitude, longitude: longitude)
+            //print("Location Data Received.")
+            //print(latitude)
+            //print(longitude)
+        } else{
+            print("This is an Optional.")
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+}
