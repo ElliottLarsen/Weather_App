@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var cityLable: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var weatherDetailLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -67,6 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
         DispatchQueue.main.async {
             self.cityLable.text = weather.cityName
             self.temperatureLabel.text = "\(weather.temperatureString) °F"
+            self.weatherDetailLabel.text = "Feels Like: \(weather.feelsLikeString) °F \nMin Temp: \(weather.minTempString) °F \nMax Temp: \(weather.maxTempString) °F \nHumidity: \(weather.humidityString) %"
             self.conditionImageView.image = UIImage(systemName: weather.condidtionName)
         }
         

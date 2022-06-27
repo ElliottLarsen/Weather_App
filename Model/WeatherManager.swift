@@ -65,8 +65,12 @@ struct WeatherManager {
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
+            let feelsLike = decodedData.main.feels_like
+            let minTemp = decodedData.main.temp_min
+            let maxTemp = decodedData.main.temp_max
+            let humidity = decodedData.main.humidity
             
-            let weather = WeatherDataModel(conditionId: id, cityName: name, temperature: temp, description: description)
+            let weather = WeatherDataModel(conditionId: id, cityName: name, temperature: temp, description: description, feelsLike: feelsLike, minTemp: minTemp, maxTemp: maxTemp, humidity: humidity)
             return weather
             //print(weather.condidtionName)
             //print(weather.temperatureString)
