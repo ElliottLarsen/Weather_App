@@ -1,6 +1,6 @@
 # Weather App
-<!--- This is an iPhone weather application.  It takes a city name as input and displays weather information (temperatures and humidity) received from openweathermap.org as well as a corresponding weather image.  --->
-
+This is an iPhone weather application.  It takes a city name as input and displays weather information (minimum, maximum, and current temperatures in Fahrenheit; humidity) received from openweathermap.org as well as a corresponding weather image.  The CoreLocation framework is used to detect and provide the weather data based on the user’s current location information.
+<br>
 
 <p>
 <image src = "weather_app.gif" width = 250><br>
