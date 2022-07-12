@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var weatherConditionLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -89,6 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
             print(weather.maxTempString)
             print(weather.minTempString)
             print(weather.humidityString)
+            self.weatherConditionLabel.text = weather.description.capitalized
             self.minTempLabel.text = "\(weather.minTempString) °F"
             self.maxTempLabel.text = "\(weather.maxTempString) °F"
             self.feelsLikeLabel.text = "\(weather.feelsLikeString) °F"
@@ -96,8 +98,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
             //self.weatherDetailLabel.text = "Feels Like: \(weather.feelsLikeString) °F \nMin Temp: \(weather.minTempString) °F \nMax Temp: \(weather.maxTempString) °F \nHumidity: \(weather.humidityString) %"
             self.conditionImageView.image = UIImage(systemName: weather.condidtionName)
         }
-        
-        print(weather.temperature)
+        //print(weather.description.capitalized)
+        //print(weather.temperature)
     }
     
     func didError(error: Error) {
