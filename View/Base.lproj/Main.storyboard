@@ -249,12 +249,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLabel" destination="eAv-y3-cno" id="LuQ-qu-9eq"/>
                         <outlet property="cityLable" destination="TEI-Rd-7wW" id="Svi-1X-rKs"/>
                         <outlet property="conditionImageView" destination="BaZ-G5-hJa" id="XYI-Up-ohF"/>
                         <outlet property="feelsLikeLabel" destination="LYL-d1-2d1" id="Hfh-IW-LCh"/>
+                        <outlet property="feelsLikeLogo" destination="uh6-au-cEx" id="JwO-3I-ki0"/>
                         <outlet property="humidityLabel" destination="EPg-jf-5go" id="kC7-Ws-ATj"/>
+                        <outlet property="humidityLogo" destination="3eb-9l-3Vf" id="Tjq-wk-Nxt"/>
                         <outlet property="maxTempLabel" destination="Re1-pe-Nms" id="rPL-L1-Gav"/>
+                        <outlet property="maxTempLogo" destination="cI7-5M-Fc5" id="2Gh-se-nO0"/>
                         <outlet property="minTempLabel" destination="N6H-JG-mFe" id="LNp-p7-h2N"/>
+                        <outlet property="minTempLogo" destination="2fw-IG-1Kn" id="gpb-sT-Ey0"/>
                         <outlet property="searchTextField" destination="ey3-J7-a6T" id="uio-Rw-BIq"/>
                         <outlet property="temperatureLabel" destination="xVP-de-eE2" id="H6P-xX-5TK"/>
                         <outlet property="weatherConditionLabel" destination="8Cy-Fg-2c9" id="91C-CZ-20h"/>

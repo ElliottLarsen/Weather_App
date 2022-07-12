@@ -55,7 +55,7 @@ struct WeatherDataModel {
         case 800:
             return "sun.max.fill"
         case 801...804:
-            return "cloud.bolt.fill"
+            return "cloud.fill"
         default:
             return "sun.max.fill"
         }

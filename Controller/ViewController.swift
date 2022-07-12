@@ -8,23 +8,46 @@
 import UIKit
 import CoreLocation
 
+
 class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var cityLable: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBOutlet weak var minTempLogo: UIImageView!
+    @IBOutlet weak var feelsLikeLogo: UIImageView!
+    @IBOutlet weak var maxTempLogo: UIImageView!
+    @IBOutlet weak var humidityLogo: UIImageView!
+    
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weatherConditionLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Round out edges.
+        bottomLabel.layer.cornerRadius = 50
+        bottomLabel.clipsToBounds = true
+        
+        minTempLogo.layer.cornerRadius = 15
+        minTempLogo.clipsToBounds = true
+        
+        maxTempLogo.layer.cornerRadius = 15
+        maxTempLogo.clipsToBounds = true
+        
+        feelsLikeLogo.layer.cornerRadius = 15
+        feelsLikeLogo.clipsToBounds = true
+        
+        humidityLogo.layer.cornerRadius = 15
+        humidityLogo.clipsToBounds = true
         // Ask permission to get the user location.
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
