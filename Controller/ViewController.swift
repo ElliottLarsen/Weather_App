@@ -13,7 +13,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var cityLable: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var weatherDetailLabel: UILabel!
+    
+    @IBOutlet weak var minTempLabel: UILabel!
+    @IBOutlet weak var maxTempLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -56,7 +60,20 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         // Catch the user input and send it to WeatherManager.swift.
-        if let city = searchTextField.text {
+        if var city = searchTextField.text {
+            // Check if the city name has a white space.
+            var hasWhiteSpace = false
+            for char in city {
+                if char == " " {
+                    hasWhiteSpace = true
+                } else {
+                    continue
+                }
+            }
+            if hasWhiteSpace == true {
+                city = city.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+            }
+            //print(city)
             weatherManager.getWeather(cityName: city)
         }
         // Clear our the text field.
@@ -68,7 +85,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WeatherManagerDeleg
         DispatchQueue.main.async {
             self.cityLable.text = weather.cityName
             self.temperatureLabel.text = "\(weather.temperatureString) °F"
-            self.weatherDetailLabel.text = "Feels Like: \(weather.feelsLikeString) °F \nMin Temp: \(weather.minTempString) °F \nMax Temp: \(weather.maxTempString) °F \nHumidity: \(weather.humidityString) %"
+            print(weather.feelsLikeString)
+            print(weather.maxTempString)
+            print(weather.minTempString)
+            print(weather.humidityString)
+            self.minTempLabel.text = "\(weather.minTempString) °F"
+            self.maxTempLabel.text = "\(weather.maxTempString) °F"
+            self.feelsLikeLabel.text = "\(weather.feelsLikeString) °F"
+            self.humidityLabel.text = "\(weather.humidityString) %"
+            //self.weatherDetailLabel.text = "Feels Like: \(weather.feelsLikeString) °F \nMin Temp: \(weather.minTempString) °F \nMax Temp: \(weather.maxTempString) °F \nHumidity: \(weather.humidityString) %"
             self.conditionImageView.image = UIImage(systemName: weather.condidtionName)
         }
         
